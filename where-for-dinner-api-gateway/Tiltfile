@@ -1,6 +1,7 @@
-SOURCE_IMAGE = os.getenv("SOURCE_IMAGE", default='your-registry.io/project/where-for-dinner-api-gateway-source')
+allow_k8s_contexts('tap-cls')
+SOURCE_IMAGE = os.getenv("SOURCE_IMAGE", default='harbor.h2o-4-11042.h2o.vmware.com/workload/where-for-dinner-api-gateway-source')
 LOCAL_PATH = os.getenv("LOCAL_PATH", default='.')
-NAMESPACE = os.getenv("NAMESPACE", default='default')
+NAMESPACE = os.getenv("NAMESPACE", default='dev')
 
 k8s_custom_deploy(
     'where-for-dinner',

@@ -5,17 +5,18 @@ metadata:
   namespace: dev
   labels:
     apps.tanzu.vmware.com/workload-type: web
+    apps.tanzu.vmware.com/has-tests: "true"
     app.kubernetes.io/part-of: where-for-dinner-api-gateway
     apps.tanzu.vmware.com/auto-configure-actuators: "true"
 spec:
-  env: null
+  env:
   params:
   - name: annotations
     value:
       autoscaling.knative.dev/minScale: "1"
       autoscaling.knative.dev/target: "200"
       autoscaling.knative.dev/maxScale: "4"
-  serviceClaims: null
+  serviceClaims: 
   resources:
     requests:
       memory: 250M
@@ -25,7 +26,7 @@ spec:
       cpu: 2000m
   source:
     git:
-      url: https://github.com/seletreby/hungry
+      url: https://github.com/seletreby310/hungry
       ref:
         branch: main
     subPath: where-for-dinner-api-gateway
@@ -37,11 +38,12 @@ metadata:
   namespace: dev
   labels:
     apps.tanzu.vmware.com/workload-type: web
+    apps.tanzu.vmware.com/has-tests: "true"
     app.kubernetes.io/part-of: where-for-dinner-search
     networking.knative.dev/visibility: cluster-local
     apps.tanzu.vmware.com/auto-configure-actuators: "true"
 spec:
-  env: null
+  env: 
   params:
   - name: annotations
     value:
@@ -63,7 +65,7 @@ spec:
       cpu: 2000m
   source:
     git:
-      url: https://github.com/seletreby/hungry
+      url: https://github.com/seletreby310/hungry
       ref:
         branch: main
     subPath: where-for-dinner-search
@@ -75,6 +77,7 @@ metadata:
   namespace: dev
   labels:
     apps.tanzu.vmware.com/workload-type: web
+    apps.tanzu.vmware.com/has-tests: "true"
     app.kubernetes.io/part-of: where-for-dinner-search-proc
     networking.knative.dev/visibility: cluster-local
     apps.tanzu.vmware.com/auto-configure-actuators: "true"
@@ -83,7 +86,7 @@ spec:
   - name: spring_profiles_active
     value: crawler
   build:
-    env: null
+    env: 
   params:
   - name: annotations
     value:
@@ -105,7 +108,7 @@ spec:
       cpu: 2000m
   source:
     git:
-      url: https://github.com/seletreby/hungry
+      url: https://github.com/seletreby310/hungry
       ref:
         branch: main
     subPath: where-for-dinner-search-proc
@@ -117,12 +120,13 @@ metadata:
   namespace: dev
   labels:
     apps.tanzu.vmware.com/workload-type: web
+    apps.tanzu.vmware.com/has-tests: "true"
     app.kubernetes.io/part-of: where-for-dinner-notify
     networking.knative.dev/visibility: cluster-local
     apps.tanzu.vmware.com/auto-configure-actuators: "true"
 spec:
   build:
-    env: null
+    env: 
   params:
   - name: annotations
     value:
@@ -144,7 +148,7 @@ spec:
       cpu: 2000m
   source:
     git:
-      url: https://github.com/seletreby/hungry
+      url: https://github.com/seletreby310/hungry
       ref:
         branch: main
     subPath: where-for-dinner-notify
@@ -156,13 +160,14 @@ metadata:
   namespace: dev
   labels:
     apps.tanzu.vmware.com/workload-type: web
+    apps.tanzu.vmware.com/has-tests: "true"
     app.kubernetes.io/part-of: where-for-dinner-availability
     networking.knative.dev/visibility: cluster-local
     apps.tanzu.vmware.com/auto-configure-actuators: "true"
 spec:
   build:
-    env: null
-  env: null
+    env: 
+  env: 
   params:
   - name: annotations
     value:
@@ -184,7 +189,7 @@ spec:
       cpu: 2000m
   source:
     git:
-      url: https://github.com/seletreby/hungry
+      url: https://github.com/seletreby310/hungry
       ref:
         branch: main
     subPath: where-for-dinner-availability
@@ -196,6 +201,7 @@ metadata:
   namespace: dev
   labels:
     apps.tanzu.vmware.com/workload-type: web
+    apps.tanzu.vmware.com/has-tests: "true"
     app.kubernetes.io/part-of: where-for-dinner-ui
     networking.knative.dev/visibility: cluster-local
 spec:
@@ -215,7 +221,7 @@ spec:
       cpu: 2000m
   source:
     git:
-      url: https://github.com/seletreby/hungry
+      url: https://github.com/seletreby310/hungry
       ref:
         branch: main
     subPath: where-for-dinner-ui
@@ -227,6 +233,7 @@ metadata:
   namespace: dev
   labels:
     apps.tanzu.vmware.com/workload-type: server
+    apps.tanzu.vmware.com/has-tests: "true"
     app.kubernetes.io/part-of: where-for-dinner-crawler
     networking.knative.dev/visibility: cluster-local
     apps.tanzu.vmware.com/auto-configure-actuators: "true"
@@ -246,7 +253,7 @@ spec:
       cpu: 2000m
   source:
     git:
-      url: https://github.com/seletreby/hungry
+      url: https://github.com/seletreby310/hungry
       ref:
         branch: main
     subPath: where-for-dinner-crawler
